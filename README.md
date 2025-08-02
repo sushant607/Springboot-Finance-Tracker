@@ -1,143 +1,142 @@
-Springboot Finance Tracker
-A secure, responsive personal finance web application built using Spring Boot and MySQL. Track income, expenses, budgets, and visualize your financial health—all in one user-friendly interface.
+Here is a detailed README tailored specifically for the [Springboot-Finance-Tracker](https://github.com/sushant607/Springboot-Finance-Tracker) project, reflecting its actual features and structure:
 
-🚀 Features Overview
-🔐 Authentication & Security
-User registration and secure login with encrypted passwords (BCrypt)
+# Springboot Finance Tracker
 
-Session-based authentication; user data privacy
+**A secure, responsive personal finance web application built using Spring Boot and MySQL. Track income, expenses, budgets, and visualize your financial health—all in one user-friendly interface.**
 
-CSRF-protected forms
+## 🚀 Features Overview
 
-💸 Transaction Management
-Add, edit, and delete income and expense records
+- **Authentication & Security**
+  - User registration and secure login with encrypted passwords (BCrypt)
+  - Session-based authentication for user data privacy
+  - CSRF-protected forms
 
-Categorize transactions (e.g., Food & Dining, Shopping, Salary, etc.)
+- **Transaction Management**
+  - Add, edit, and delete income/expense records
+  - Categorize transactions (e.g., Food & Dining, Shopping, Salary, etc.)
+  - Date-wise entry with quick access to recent transactions
+  - Real-time filtering by type, date, or category
 
-Date-wise entry, quick access to recent transactions
+- **Dashboard & Analytics**
+  - Overview cards: Total Income, Expenses, Balance, Budget Used
+  - Summaries for current period transactions and expenses
+  - Quick stats: transaction count, active budgets, categories used
+  - Visual highlights for budgets exceeded or nearing limits
 
-Real-time filtering by type, date, or category
+- **Budget Planning**
+  - Create and manage monthly budgets per category
+  - See remaining, spent, and total budget for each category
+  - Color-coded progress bars (green/yellow/red) for budget status
+  - Alerts and warnings when budget is approached or exceeded
 
-💹 Dashboard & Analytics
-Overview cards: Total Income, Expenses, Balance, Budget Used
+- **Responsive UI & UX**
+  - Clean, Bootstrap-styled templates
+  - Mobile-friendly navigation and layout
+  - Font Awesome icons for consistent branding
 
-Transaction and expense summaries for the current period
+## 🛠️ Technology Stack
 
-Quick stats: transaction count, active budgets, categories used
+- **Backend:** Spring Boot, Spring Security, Spring Data JPA (Hibernate)
+- **Frontend:** Thymeleaf templating, Bootstrap 5, Font Awesome
+- **Database:** MySQL (default), H2 for testing (configurable)
+- **Testing:** JUnit integration tests for core logic
 
-Visual highlights for budgets exceeded or nearing limit
+## 🏗️ Project Structure
 
-📊 Budget Planning
-Create and manage monthly budgets per category
-
-See remaining, spent, and total budget for each category
-
-Color-coded progress bars: green (safe), yellow (warning), red (exceeded)
-
-Alerts and warnings when a budget is approached or exceeded
-
-📱 Responsive UI & UX
-Clean, Bootstrap-styled templates
-
-Mobile-friendly navigation and layout
-
-Consistent branding & icons via Font Awesome
-
-🛠️ Technology Stack
-Backend: Spring Boot, Spring Security, Spring Data JPA (Hibernate)
-
-Frontend: Thymeleaf templating, Bootstrap 5, Font Awesome
-
-Database: MySQL (or H2; easy to swap in application.properties)
-
-Testing: JUnit integration tests for core logic
-
-✨ Live Previews (Screenshots)
-Add screenshots here of your dashboard, transactions, and budgets pages
-
-![Dashboard Screenshot ![Budgets Screenshot 🏗️ Project Structure
-
-text
+```
 src/
   main/
     java/
-    └── com/example/financetracker/
+      com/example/financetracker/
         controller/
         service/
         repository/
         entity/
         dto/
     resources/
-        templates/
-          dashboard.html
-          budgets.html
-          transactions.html
-          login.html
-          register.html
-        static/
-          css/
-          js/
-        application.properties
+      templates/
+        dashboard.html
+        budgets.html
+        transactions.html
+        login.html
+        register.html
+      static/
+        css/
+        js/
+      application.properties
   test/
 pom.xml
-⚡ Getting Started
-1. Clone the Repository
-text
-git clone https://github.com/sushant607/Springboot-Finance-Tracker.git
-cd Springboot-Finance-Tracker
-2. Configure the Database
-Edit src/main/resources/application.properties:
+```
 
-text
-spring.datasource.url=jdbc:mysql://localhost:3306/your_db_name
-spring.datasource.username=your_mysql_username
-spring.datasource.password=your_mysql_password
-spring.jpa.hibernate.ddl-auto=update
-By default, the app works with MySQL. You can switch to H2 for testing (jdbc:h2:mem:financedb).
+## ⚡ Getting Started
 
-3. Build & Run
-text
-./mvnw clean install
-./mvnw spring-boot:run
-Visit http://localhost:8080
+### Prerequisites
 
-🎯 Usage Guide
-Register & Log In
-New users: Click Register, fill in your details, and log in.
+- Java 11 or higher
+- Maven
+- MySQL database (or use H2 for testing)
 
-Returning users: Use your username and password.
+### Installation Steps
 
-Add Transactions
-Go to the Transactions page.
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/sushant607/Springboot-Finance-Tracker.git
+   cd Springboot-Finance-Tracker
+   ```
 
-Select Income or Expense, enter the category, description, amount, and date.
+2. **Configure the Database**
+   Edit `src/main/resources/application.properties`:
+   ```
+   spring.datasource.url=jdbc:mysql://localhost:3306/your_db_name
+   spring.datasource.username=your_mysql_username
+   spring.datasource.password=your_mysql_password
+   spring.jpa.hibernate.ddl-auto=update
+   ```
+   - By default, the app works with MySQL. For H2 (in-memory), set:
+     ```
+     spring.datasource.url=jdbc:h2:mem:financedb
+     ```
 
-Transactions are listed most recent first. You can edit or delete any record from the list.
+3. **Build & Run**
+   ```bash
+   ./mvnw clean install
+   ./mvnw spring-boot:run
+   ```
+   Visit `http://localhost:8080` in your browser.
 
-Set Budgets
-Switch to Budgets.
+## 🎯 Usage Guide
 
-Pick a category, enter your monthly budget limit, and save.
+- **Register & Log In:** New users register, returning users log in.
+- **Add Transactions:** On the "Transactions" page, select income/expense, fill details (category, description, amount, date). Transactions are listed with options to edit or delete.
+- **Set Budgets:** On the "Budgets" page, pick a category and set a monthly limit. Progress bars visualize spending and budget usage by category.
+- **Visualize & Monitor:** The dashboard displays total income, expenses, net balance, budget usage, and financial highlights with quick stats.
 
-The budget summary visualizes each category's performance for the month.
+## ✨ Key Code Features
 
-Visualize and Monitor
-Dashboard shows your income, expenses, net balance, and budget usage.
+- Role-based security (extensible for admin/audit roles)
+- Service layer for clean business logic separation and testing
+- Repository pattern for data access abstraction
+- Form validation at UI and backend
+- Modular UI templates for easy maintenance
 
-Quick stats and highlights indicate financial health instantly.
+## 📸 Screenshots
 
-🗃️ Key Code Features
-Role-based security (can be extended for admin/audit roles)
+> Add screenshots here: dashboard, transactions, budgets, login/register pages.
 
-Service layer for business logic separation and easy testing
+## 🛠️ Configuration Notes
 
-Repository pattern for data access abstraction
+- To switch database engine, change `spring.datasource.url` in `application.properties`.
+- To use another port: add `server.port=YOUR_PORT` to `application.properties`.
 
-Form validation at both the UI and backend levels
+## 📢 Contributing
 
-Modular UI templates (header/footer, page fragments for maintainability)
-
-⚙️ Configuration
-Change database type: Tweak spring.datasource.url in properties file.
-
-Switch to a different port: Add server.port=YOUR_PORT in properties.
+1. Fork the repository
+2. Create a feature branch:
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Commit & push your changes:
+   ```bash
+   git commit -m "Describe your change"
+   git push origin feature-name
+   ```
